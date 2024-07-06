@@ -1,0 +1,77 @@
+$montserrat-font-path: '../fonts/Montserrat';
+$montserrat-font-name: 'Montserrat';
+
+$bad_script-font-path: '../fonts/Bad_Script';
+$bad_script-font-name: 'BadScript';
+
+
+@font-face {
+  font-family: $bad_script-font-name;
+  src: url('#{$bad_script-font-path}/BadScript-Regular.woff2') format('woff2'),
+  url('#{$bad_script-font-path}/BadScript-Regular.woff') format('woff'),
+  url('#{$bad_script-font-path}/BadScript-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $montserrat-font-name;
+  src: url('#{$montserrat-font-path}/Montserrat-Regular.woff2') format('woff2'),
+  url('#{$montserrat-font-path}/Montserrat-Regular.woff') format('woff'),
+  url('#{$montserrat-font-path}/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $montserrat-font-name;
+  src: url('#{$montserrat-font-path}/Montserrat-Medium.woff2') format('woff2'),
+  url('#{$montserrat-font-path}/Montserrat-Medium.woff') format('woff'),
+  url('#{$montserrat-font-path}/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $montserrat-font-name;
+  src: url('#{$montserrat-font-path}/Montserrat-SemiBold.woff2') format('woff2'),
+  url('#{$montserrat-font-path}/Montserrat-SemiBold.woff') format('woff'),
+  url('#{$montserrat-font-path}/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $montserrat-font-name;
+  src: url('#{$montserrat-font-path}/Montserrat-SemiBoldItalic.woff2') format('woff2'),
+  url('#{$montserrat-font-path}/Montserrat-SemiBoldItalic.woff') format('woff'),
+  url('#{$montserrat-font-path}/Montserrat-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $montserrat-font-name;
+  src: url('#{$montserrat-font-path}/Montserrat-Bold.woff2') format('woff2'),
+  url('#{$montserrat-font-path}/Montserrat-Bold.woff') format('woff'),
+  url('#{$montserrat-font-path}/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $montserrat-font-name;
+  src: url('#{$montserrat-font-path}/Montserrat-BoldItalic.woff2') format('woff2'),
+  url('#{$montserrat-font-path}/Montserrat-BoldItalic.woff') format('woff'),
+  url('#{$montserrat-font-path}/Montserrat-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
