@@ -1,0 +1,142 @@
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+    font-family: $bad_script;
+
+    + .sub-h {
+        margin-top: -10px;
+        margin-bottom: 40px;
+    }
+}
+
+h1, .h1 {
+    margin-bottom: 30px;
+    font-size: 75px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-weight: normal;
+    line-height: 1.1;
+    padding: 0 90px;
+    color: $color_white;
+    text-align: center;
+
+    @include breakpoint($lg-max) {
+        padding: 0;
+        font-size: 55px;
+    }
+
+    @include breakpoint($md-max) {
+        padding: 0;
+        font-size: 45px;
+    }
+}
+
+h2, .h2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    font-size: 55px;
+    font-weight: normal;
+    line-height: 1.1;
+    padding: 0 90px;
+    text-align: center;
+
+    @include breakpoint($lg-max) {
+        padding: 0;
+        font-size: 45px;
+    }
+
+    @include breakpoint($md-max) {
+        padding: 0;
+        font-size: 35px;
+    }
+}
+
+h3, .h3 {
+    margin-bottom: 20px;
+    font-size: 35px;
+    line-height: 1;
+}
+
+h4, .h4 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+h5, .h5 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+h6, .h6 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+// Стиль ссылки по-умолчанию
+a, .a {
+    color: inherit;
+    text-decoration: none;
+    transition: color $transition;
+
+    &:hover {
+        color: $color_text-black;
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: $color-mint;
+    }
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+blockquote {
+    position: relative;
+    font-style: italic;
+    font-weight: bold;
+}
+
+ol, ul {
+    $padding: 40px;
+    $font-size: 18px;
+    margin-bottom: 40px;
+    padding-left: $padding;
+
+    > li {
+        position: relative;
+        list-style: none;
+        margin-bottom: 10px;
+        font-weight: 500;
+
+
+    }
+}
+
+ul {
+    > li {
+        position: relative;
+        font-style: italic;
+        list-style: none;
+    }
+}
+
+img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    max-width: max-content;
+    height: 100%;
+}

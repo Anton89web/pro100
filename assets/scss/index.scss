@@ -1,3 +1,16 @@
-@import "common";
 @import "service";
+@import "common";
 @import "sections";
+
+
+body {
+  font-family: $montserrat;
+  color: $color_white;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
