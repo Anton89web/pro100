@@ -1,6 +1,7 @@
 .header {
   padding: 30px 0;
   border-bottom: 2px solid #CF868880;
+  background-color: $bg_pink;
 
   @include breakpoint($md-max) {
     padding: 20px 0 ;
