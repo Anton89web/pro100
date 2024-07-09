@@ -1,0 +1,55 @@
+.reviews  {
+  background-color: $color-pink;
+
+  &__inner {
+    max-width: 1700px;
+    margin: 40px auto;
+    position: relative;
+    padding: 0 15px;
+  }
+
+  &_wrapper {
+    max-width: 85%;
+
+    @include breakpoint($lg-max) {
+      max-width: 100%;
+    }
+  }
+
+  &__item {
+    height: 470px;
+    overflow: hidden;
+
+    @include breakpoint($md-max) {
+      height: 295px;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    border-radius: 42px;
+  }
+
+  &_bottom {
+    background: #ECF0CF;
+    border-radius: 25px;
+    margin: 0 auto;
+    color: $color-text-black;
+    max-width: 450px;
+    height: 70px;
+
+    @include breakpoint($md-max) {
+      max-width: 90%;
+    }
+  }
+
+  &__link {
+    @extend %flex_center;
+    height: 100%;
+    font-family: $montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+  }
+}

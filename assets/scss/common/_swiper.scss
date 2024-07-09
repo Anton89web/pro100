@@ -1,0 +1,13 @@
+.swiper-button {
+  &-next, &-prev {
+    @extend %flex_center;
+    width: 84px !important;
+    height: 84px !important;
+    border-radius: 25px;
+    background: #D9787B;
+
+    @include breakpoint($lg-max) {
+      display: none!important;
+    }
+  }
+}

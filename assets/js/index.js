@@ -1,4 +1,5 @@
 import '../scss/index.scss'
+import './swiper'
 
 function showMobileMenu () {
     const menu = document.querySelector('.header__link-wrapper');
