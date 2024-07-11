@@ -9,5 +9,13 @@
     @include breakpoint($lg-max) {
       display: none!important;
     }
+
+    svg {
+      width: 16px !important;
+    }
+
+    &:after {
+      display: none;
+    }
   }
 }

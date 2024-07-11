@@ -11,7 +11,6 @@ export default {
         path: path.resolve(path.dirname('./'), 'build'),
         assetModuleFilename: path.join('images', '[name][ext]'),
     },
-
     module: {
         rules: [
             {
