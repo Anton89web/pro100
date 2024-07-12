@@ -129,6 +129,13 @@ ul {
     }
 }
 
+ol {
+    > li {
+        position: relative;
+        list-style: decimal;
+    }
+}
+
 img {
     display: block;
     object-fit: cover;

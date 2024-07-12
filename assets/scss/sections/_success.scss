@@ -1,0 +1,154 @@
+.success {
+  background-color: $bg_pink;
+
+  &__top {
+    @extend %flex_between;
+    gap: 30px;
+    margin-top: 50px;
+
+    @include breakpoint($lg-max) {
+      flex-direction: column;
+    }
+  }
+
+  &__months {
+    background: #F2ACAE;
+    border-radius: $radius_big;
+    padding: 30px;
+    width: 50%;
+    min-height: 360px;
+    position: relative;
+
+    @include breakpoint($lg-max) {
+      width: 70%;
+      min-height: 350px;
+    }
+
+    @include breakpoint($sm-max) {
+      width: 100%;
+      min-height: 250px;
+    }
+
+    &:first-child {
+      &::after {
+        content: url("../images/curved_arrow.svg");
+        position: absolute;
+        width: 100px;
+        top: -10px;
+        right: -25px;
+        z-index: 1;
+
+        @include breakpoint($lg-max) {
+          top: auto;
+          right: auto;
+          left: 5px;
+          bottom: -20px;
+          scale: .5;
+          transform: scale(-1, 1) rotate(80deg);
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      &::after {
+        content: url("../images/curved_arrow.svg");
+        position: absolute;
+        width: 80px;
+        bottom: 15px;
+        left: -10px;
+        z-index: 1;
+        transform: scale(-1, 1) rotate(45deg);
+
+        @include breakpoint($lg-max) {
+          top: auto;
+          right: 0;
+          left: auto;
+          bottom: -15px;
+          scale: .5;
+          transform: rotate(80deg);
+        }
+      }
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-family: $montserrat;
+      font-size: 26px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.3;
+      padding-bottom: 27px;
+      border-bottom: 1px solid #F7CACB;
+      margin-bottom: 30px;
+
+      @include breakpoint($md-max) {
+        font-size: 20px;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+      }
+
+      img {
+        @include breakpoint($md-max) {
+          height: 30px;
+        }
+      }
+    }
+
+    &-point {
+      margin-bottom: 0;
+
+      li {
+        font-family: $montserrat;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: left;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        @include breakpoint($md-max) {
+          font-size: 16px;
+        }
+      }
+
+      ul {
+        margin-top: 25px;
+        margin-bottom: 30px;
+
+        > li {
+          margin-bottom: 0;
+          text-transform: none;
+          font-weight: 500;
+          transform: translateX(-20px);
+        }
+      }
+    }
+
+    &-mint {
+      @extend %flex_between;
+      background-color: $color-mint;
+      width: 100%;
+      margin-top: 30px;
+      min-height: fit-content;
+
+      @include breakpoint($sm-max) {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      img {
+        height: 155px;
+
+        @include breakpoint($sm-max) {
+          height: 85px;
+        }
+      }
+    }
+  }
+}
