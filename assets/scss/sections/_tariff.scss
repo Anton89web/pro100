@@ -1,0 +1,186 @@
+.tariff {
+  .section__top {
+    align-items: center;
+
+    @include breakpoint($lg-max) {
+      margin-bottom: 30px;
+    }
+
+    &-wrapper {
+      @extend %flex_between;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 700px;
+
+      @include breakpoint($lg-max) {
+        align-items: center;
+        row-gap: 20px;
+      }
+    }
+
+    &-text {
+      color: $color-text-black;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    &-left {
+      flex-direction: row;
+      max-width: 400px;
+
+      @include breakpoint($lg-max) {
+        max-width: 100%;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      &-img {
+        max-width: 80px;
+        object-fit: contain;
+        rotate: 110deg;
+        bottom: -40px;
+
+        @include breakpoint($md-max) {
+          position: absolute;
+          right: 20px;
+          top: 40px;
+          scale: .85;
+        }
+      }
+
+      &-text {
+        @include breakpoint($md-max) {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__item {
+    padding: 32px;
+    border-radius: $radius_big;
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    @include breakpoint($lg-max) {
+      width: 100%;
+      margin-top: 0;
+      padding: 24px;
+      margin-bottom: 10px;
+    }
+
+    &s {
+      @extend %flex_between;
+      gap: 30px;
+
+      @include breakpoint($lg-max) {
+        gap: 10px;
+        flex-direction: column;
+      }
+    }
+
+    &-pink {
+      background: $color_pink;
+
+      .tariff__item-right {
+        background: #CE7174;
+      }
+    }
+
+    &-mint {
+      background: $color_mint;
+
+      .tariff__item-right {
+        background: #1E7A78;
+      }
+    }
+
+    &-header {
+      @extend %flex_between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $color-white;
+      gap: 10px;
+
+      @include breakpoint($sm-max) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    &-title {
+      font-size: 32px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    &-right {
+      border-radius: 37px;
+      padding: 2px 13px;
+    }
+
+    &-list {
+      padding: 15px 0;
+      min-height: 205px;
+      border-bottom: 1px solid $color-white;
+
+      ul {
+        margin: 0;
+      }
+    }
+
+    &-bottom {
+      padding-top: 15px;
+      @extend %flex_between;
+
+      @include breakpoint($lg-max) {
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      &_coast {
+        @extend %flex_between;
+        gap: 15px;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-align: left;
+
+        @include breakpoint($xl-max) {
+          font-size: 32px;
+        }
+
+        span {
+          font-size: 18px;
+          font-style: italic;
+          font-weight: 700;
+          line-height: 1.2;
+          text-transform: uppercase;
+        }
+      }
+
+      &_btn {
+        @extend %flex_center;
+        width: 100%;
+        max-width: 218px;
+        height: 65px;
+        border-radius: 24px;
+        background: #ECF0CF;
+        color: $color-text-black;
+
+        @include breakpoint($xl-max) {
+          max-width: 165px;
+        }
+
+        @include breakpoint($sm-max) {
+          max-width: 300px;
+        }
+      }
+    }
+  }
+}
