@@ -1,0 +1,71 @@
+.trust {
+  background: $bg_pink;
+
+  &__inner {
+    @extend %flex_between;
+    margin-top: 100px;
+
+    @include breakpoint($md-max) {
+      flex-direction: column;
+      margin-top: 0;
+    }
+  }
+
+  &__descr {
+    background: $color_mint;
+    padding: 50px 50px 50px 80px;
+    border-radius: $radius_big;
+
+    @include breakpoint($lg-max) {
+      padding: 80px 20px 20px 20px;
+      max-width: 400px;
+    }
+
+    li {
+      font-weight: 500;
+      margin-bottom: 10px;
+      max-width: 700px;
+    }
+
+    &-title {
+      font-size: 26px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: left;
+      margin-bottom: 20px;
+
+      @include breakpoint($lg-max) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .foto__card {
+    position: relative;
+    rotate: -5deg;
+    z-index: 2;
+    transform: translateX(25px);
+
+    @include breakpoint($lg-max) {
+      bottom: -30px;
+      left: -30px;
+    }
+
+    &-title {
+      position: absolute;
+      bottom: 45px;
+      font-size: 23px;
+      font-style: italic;
+      font-weight: 700;
+      text-align: left;
+      color: $color-mint;
+      z-index: 3;
+
+      @include breakpoint($lg-max) {
+        font-size: 14px;
+        bottom: 20px;
+      }
+    }
+  }
+}
