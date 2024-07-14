@@ -1,0 +1,38 @@
+.footer {
+  background: $color_mint;
+  padding: 200px 0 100px 0;
+
+  @include breakpoint($lg-max) {
+    padding: 100px 0 50px 0;
+  }
+
+  &__inner {
+    @extend %flex_between;
+    align-items: flex-end;
+
+    @include breakpoint($md-max) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 35px;
+    }
+  }
+
+  &__service {
+    @extend %flex_between;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+  }
+
+  &__service-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    text-decoration: underline;
+  }
+}

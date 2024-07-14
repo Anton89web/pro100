@@ -1,14 +1,37 @@
 .welcome {
+  position: relative;
+  padding-bottom: 0;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -25%;
+    height: 270px;
+    background: url("../images/footer_wave.svg") top left/contain no-repeat;
+
+    @include breakpoint($md-max) {
+      bottom: -40%;
+    }
+
+    @include breakpoint($sm-max) {
+     height: 250px;
+    }
+  }
+
+
   @include breakpoint($xl-max) {
     padding-bottom: 150px;
   }
 
   &__inner {
     @extend %flex_between;
+    position: relative;
+    z-index: 3;
 
     @include breakpoint($xl-max) {
       flex-direction: column;
-      position: relative;
     }
   }
 
@@ -48,10 +71,11 @@
       @include breakpoint($xl-max) {
         position: absolute;
         bottom: -100px;
-        left: 0;
-        right: 0;
+        left: 15px;
+        right: 15px;
         max-width: 500px;
         margin: 0 auto;
+        padding-right: 20px;
       }
 
       span {
@@ -68,7 +92,6 @@
   }
 
   .foto__card {
-    position: relative;
     right: 15%;
 
     @include breakpoint($xl-max) {
