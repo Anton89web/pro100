@@ -1,0 +1,112 @@
+.whole {
+  &__title {
+    color: $color_text-black;
+
+    @include breakpoint($lg-max) {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    &-bottom {
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      color: $color_text-black;
+      text-transform: uppercase;
+      margin: 80px auto 40px auto;
+      width: fit-content;
+      position: relative;
+
+      @include breakpoint($lg-max) {
+        margin: 30px auto 40px auto;
+        font-size: 18px;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -15px;
+        height: 15px;
+        width: 265px;
+        background: url("../images/mint_line.svg") top left/contain no-repeat;
+
+        @include breakpoint($lg-max) {
+         width: 200px;
+        }
+      }
+    }
+  }
+
+  &__friends {
+    font-family: $montserrat;
+    max-width: 740px;
+    margin: 0 auto;
+    border-radius: $radius-big;
+    background: $color_mint;
+    padding: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+
+    @include breakpoint($md-max) {
+      padding: 24px;
+    }
+
+    &-title {
+      font-size: 24px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+
+      @include breakpoint($md-max) {
+        font-size: 20px;
+      }
+    }
+
+    &-subtitle {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 25.2px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+
+      @include breakpoint($md-max) {
+        font-size: 16px;
+      }
+    }
+
+    &-descr {
+      font-weight: 500;
+      padding: 15px 22px;
+      border: 1px solid $color_white;
+      border-radius: 13px;
+      margin: 0;
+
+      @include breakpoint($md-max) {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+  }
+
+  .tariff__item-bottom_coast  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    gap: 10px;
+
+    span {
+      font-size: 24px;
+      &:before {
+        content: url("../images/line.svg");
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
