@@ -1,0 +1,146 @@
+.dont_know {
+  background: $bg_pink-deep url("../images/hands.svg") top right no-repeat;
+
+  @include breakpoint($xl-max) {
+    position: relative;
+  }
+
+  @include breakpoint($lg-max) {
+    background: $bg_pink-deep;
+    padding-bottom: 160px;
+  }
+
+  &-inner {
+    @extend %flex_between;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    @include breakpoint($lg-max) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &-left {
+    max-width: 580px;
+    padding-bottom: 50px;
+
+    @include breakpoint($lg-max) {
+      max-width: 100%;
+    }
+  }
+
+  &-title {
+    text-align: left;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+
+    @include breakpoint($xl-max) {
+      font-size: 32px;
+    }
+
+    @include breakpoint($lg-max) {
+      text-align: center;
+      line-height: 1.4;
+      font-size: 26px;
+      letter-spacing: 2px;
+    }
+  }
+
+  &-subtitle {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 75px;
+    position: relative;
+
+    @include breakpoint($lg-max) {
+      text-align: center;
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+
+    &:before {
+      content: url("../images/white_line.svg");
+      position: absolute;
+      height: 20px;
+      left: 0;
+      right: 0;
+      bottom: -20px;
+
+      @include breakpoint($lg-max) {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 18px;
+        bottom: -60px;
+      }
+    }
+  }
+
+  &-btn {
+    @extend %flex_center;
+    height: 65px;
+    max-width: 375px;
+    background: #ECF0CF;
+    color: $color-text-black;
+    border-radius: 24px;
+
+    @include breakpoint($lg-max) {
+      width: 335px;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-right {
+    @extend %flex_between;
+    flex-direction: column;
+    gap: 45px;
+    width: 100%;
+    max-width: 500px;
+
+    @include breakpoint($lg-max) {
+      gap: 5px;
+    }
+  }
+
+  &-question {
+    @extend %flex_center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: uppercase;
+    height: 75px;
+    width: 100%;
+    max-width: 320px;
+    border-radius: $radius_big;
+
+    &:nth-child(1){
+      margin-right: auto;
+      background: $bg_pink-deep url("../images/curcle.svg") top right no-repeat;
+    }
+
+    &:nth-child(2){
+      background: $bg_pink-deep url("../images/curcle_big.svg") top right/contain no-repeat;
+      max-width: 400px;
+    }
+
+    &:nth-child(3){
+      margin-left: auto;
+      background: $bg_pink-deep url("../images/curcle.svg") top right no-repeat;
+    }
+
+    @include breakpoint($lg-max) {
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
