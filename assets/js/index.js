@@ -31,5 +31,21 @@ function changeTab() {
     })
 }
 
+function activeAccordion() {
+    const items = document.querySelectorAll('.accordion__item')
+
+    items.forEach((accordion, i) => {
+        accordion.addEventListener('click', e => {
+            if(accordion.classList.contains('active')) {
+                accordion.classList.remove('active')
+            } else {
+                document.querySelector('.accordion__item.active')?.classList.remove('active')
+                accordion.classList.toggle('active')
+            }
+        })
+    })
+}
+
 showMobileMenu();
 changeTab();
+activeAccordion();
