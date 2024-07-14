@@ -1,0 +1,129 @@
+.welcome {
+  @include breakpoint($xl-max) {
+    padding-bottom: 150px;
+  }
+
+  &__inner {
+    @extend %flex_between;
+
+    @include breakpoint($xl-max) {
+      flex-direction: column;
+      position: relative;
+    }
+  }
+
+  &__title {
+    color: $color_text-black;
+    max-width: 600px;
+    text-align: left;
+    line-height: 1.3;
+    margin-bottom: 120px;
+    @include breakpoint($xl-max) {
+      margin-bottom: 80px;
+    }
+
+    @include breakpoint($md-max) {
+      text-align: center;
+    }
+
+    &:after {
+      content: url("../images/pro100.svg");
+      position: absolute;
+      bottom: -70px;
+      right: 30px;
+
+      @include breakpoint($md-max) {
+        scale: .5;
+        bottom: -130px;
+        right: 15%;
+      }
+    }
+
+    &-bottom {
+      @extend %flex_center;
+      border-radius: 24px;
+      height: 65px;
+      background: $color_mint;
+
+      @include breakpoint($xl-max) {
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        right: 0;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      span {
+        position: relative;
+
+        &:after {
+          content: url("../images/question_white.svg");
+          position: absolute;
+          bottom: -7px;
+          right: -33px;
+        }
+      }
+    }
+  }
+
+  .foto__card {
+    position: relative;
+    right: 15%;
+
+    @include breakpoint($xl-max) {
+      bottom: -15%;
+    }
+
+
+    @include breakpoint($md-max) {
+      right: 23%;
+      margin: 0 auto;
+    }
+
+    &-text {
+      @extend %flex_between;
+      flex-direction: column;
+      align-items: flex-start;
+      font-family: $montserrat;
+      position: absolute;
+      bottom: 30px;
+      z-index: 3;
+
+      @include breakpoint($lg-max) {
+        bottom: 15px;
+      }
+
+      @include breakpoint($md-max) {
+        bottom: 3px;
+      }
+    }
+
+    &-position {
+      font-size: 19px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      text-align: left;
+      color: $color-text-black;
+      margin-bottom: 5px;
+
+      @include breakpoint($lg-max) {
+        font-size: 13px;
+        margin-bottom: 0;
+      }
+    }
+
+    &-name {
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 27px;
+      text-align: left;
+      color: $color_mint;
+
+      @include breakpoint($lg-max) {
+        font-size: 17px;
+      }
+    }
+  }
+}
