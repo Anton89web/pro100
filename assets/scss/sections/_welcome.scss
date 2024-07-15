@@ -98,10 +98,18 @@
       bottom: -15%;
     }
 
-
     @include breakpoint($md-max) {
       right: 23%;
       margin: 0 auto;
+      position: relative;
+    }
+
+    &-img {
+      scale: 1.45;
+
+      @include breakpoint($lg-max) {
+        scale: 1.65;
+      }
     }
 
     &-text {

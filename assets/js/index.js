@@ -46,6 +46,28 @@ function activeAccordion() {
     })
 }
 
+//Кнопка скрола наверх
+function scrollTop () {
+    const backToTop = document.querySelector(".back-to-top");
+
+    // Показать/скрыть кнопку при прокрутке страницы
+    window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 2000) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    // Плавная прокрутка при клике на кнопку
+    backToTop.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+}
+
 showMobileMenu();
 changeTab();
 activeAccordion();
+scrollTop()
