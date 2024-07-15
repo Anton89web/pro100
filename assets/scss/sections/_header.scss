@@ -25,6 +25,10 @@
   &__link {
     font-size: 18px;
 
+    @include breakpoint($md-max) {
+      text-align: right;
+    }
+
     &-wrapper {
       @extend %flex_between;
       gap: 25px;
@@ -36,7 +40,7 @@
         background-color: $color-pink;
         align-items: flex-end;
         row-gap: 50px;
-        padding: 50px;
+        padding: 50px 50px 50px 20px;
         position: fixed;
         top: 67px;
         right: -115%;

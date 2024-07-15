@@ -57,6 +57,7 @@
       @extend %flex_center;
       gap: 10px;
       margin-top: 40px;
+      margin-bottom: -1px;
 
       @include breakpoint($md-max) {
         gap: 3px;
@@ -67,7 +68,7 @@
     &-btn {
       @extend %flex_center;
       width: 14%;
-      height: 85px;
+      height: 86px;
       border-radius: 28px 28px 0px 0px;
       color: $color_mint;
       background-color: #E9FCFA;
@@ -104,8 +105,17 @@
       z-index: 2;
       font-size: 18px;
       font-weight: 600;
-      transition: opacity $transition;
+      transition: .5s ease-in-out;
       visibility: hidden;
+
+      &:nth-child(4) {
+        .tabs__item-img {
+          @include breakpoint($sm-max) {
+            width: 150px;
+            height: 180px;
+          }
+        }
+      }
 
       @include breakpoint($lg-max) {
         padding: 30px 20px 0 20px;
@@ -120,6 +130,10 @@
       &.active {
         opacity: 1;
         visibility: visible;
+
+        .tabs__item-img {
+          scale: 1;
+        }
       }
 
       &-wrapper {
@@ -142,8 +156,10 @@
     &-img {
       width: 430px;
       height: 450px;
+      scale: 0;
       align-self: flex-end;
       flex-shrink: 0;
+      transition: scale .5s ease-in-out;
 
       @include breakpoint($lg-max) {
         width: 350px;

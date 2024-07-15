@@ -1,6 +1,7 @@
 import '../scss/index.scss'
 import './swiper'
 
+// Мобильное меню
 function showMobileMenu() {
     const menu = document.querySelector('.header__link-wrapper');
     const icons = document.querySelectorAll('.header__mobile-icon');
@@ -8,12 +9,14 @@ function showMobileMenu() {
 
     icons.forEach(icon => {
         icon.addEventListener('click', e => {
+            stopScroll ()
             menu.classList.toggle('show')
             iconsWrapper.classList.toggle('hidden')
         })
     })
 }
 
+//Табы
 function changeTab() {
     const tabBtns = document.querySelectorAll('.tabs__item-btn')
     const tabs = document.querySelectorAll('.tabs__item-body')
@@ -31,6 +34,7 @@ function changeTab() {
     })
 }
 
+//Аккордион
 function activeAccordion() {
     const items = document.querySelectorAll('.accordion__item')
 
@@ -67,7 +71,30 @@ function scrollTop () {
     });
 }
 
+// Стоп скролла при мобильном меню и модалки
+function stopScroll () {
+    const body = document.querySelector('body');
+
+    body.classList.toggle('stop__scroll');
+}
+
+// Модальное окно
+function showModal() {
+    const modal = document.querySelector('.modal');
+    const modalClose = document.querySelector('.modal__close');
+
+    stopScroll ()
+    modal.classList.add('show');
+
+    modalClose.addEventListener('click', e => {
+        modal.classList.remove('show');
+        stopScroll ()
+    })
+}
+
 showMobileMenu();
 changeTab();
 activeAccordion();
 scrollTop()
+
+setTimeout(showModal, 60000);

@@ -6,6 +6,7 @@
     <link rel="icon" href="<%= require('.//images/crown.svg') %>">
     <title>PRO100</title>
 </head>
+
 <body>
 <header class="header">
     <div class="header__inner container">
@@ -37,18 +38,16 @@
         <div class="header__mobile hidden">
             <img class="header__mobile-burger header__mobile-icon"
                  src="<%= require('.//images/burger.svg') %>"
-                 alt="просто"
+                 alt="мобильное меню"
             >
 
             <img class="header__mobile-cross header__mobile-icon"
                  src="<%= require('.//images/cross.svg') %>"
-                 alt="просто"
+                 alt="закрыть мобильное меню"
             >
         </div>
     </div>
 </header>
-
-<!--    <img src="<%= require('.//images/crown.svg') %>" alt="">-->
 
 <main>
     <section class="subheader">
@@ -1203,6 +1202,44 @@
         <img src="<%= require('.//images/arrow_top.svg') %>" alt="стрелка наверх">
 
         <span>наверх</span>
+    </div>
+
+    <div class="modal">
+        <div class="modal__body">
+            <img class="modal__close"
+                 src="<%= require('.//images/cross.svg') %>"
+                 alt="закрыть мобильное меню"
+            >
+
+            <div class="modal__title">
+                Псс… прочитай меня!
+            </div>
+
+            <p class="modal__text">
+                Привет, тебе зашел курс и хочешь присоединиться к нашей компашке
+            </p>
+
+            <a class="modal__link"
+               target="_blank"
+               href=""
+            >
+                запись на курс
+            </a>
+
+            <p class="modal__text">
+                Или не все понятно, что у нас тут происходит, задай вопрос и получи исчерпывающий ответ!
+            </p>
+
+            <a  class="modal__link modal__link-question"
+                href=""
+                target="_blank"
+            >
+                <span>
+                    Есть вопросик
+                </span>
+            </a>
+
+        </div>
     </div>
 </footer>
 </body>
