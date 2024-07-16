@@ -73,6 +73,13 @@
     color: $color_text-black;
     background-color: #ECF0CF;
     margin-bottom: 40px;
+    transition: $transition;
+    border: 1px solid transparent;
+
+    &:hover {
+      opacity: .8;
+      border: 1px solid $color_text-black;
+    }
 
     @include breakpoint($lg-max) {
       height: 52px;

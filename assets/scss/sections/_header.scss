@@ -24,6 +24,26 @@
 
   &__link {
     font-size: 18px;
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 0px;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -3px;
+      background-color: $color-text-black;
+      transition: width .5s ease-in-out;
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+    }
+
 
     @include breakpoint($md-max) {
       text-align: right;

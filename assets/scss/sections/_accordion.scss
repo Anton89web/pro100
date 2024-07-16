@@ -5,7 +5,7 @@
   }
 
   &__item {
-    padding: 25px 25px 10px 25px;
+    padding: 21px 25px 10px 25px;
     border-radius: 24px;
     background: $color_mint;
     font-family: $montserrat;
@@ -83,6 +83,13 @@
 
   .schedule__question {
     background-color: $color_white;
+    transition: $transition;
+
+    &:hover {
+      color: $color_white;
+      background: $color_mint;
+      border: 1px solid transparent;
+    }
   }
 
 }

@@ -70,11 +70,23 @@
     &-test {
       background: #ECF0CF;
       color: $color-text-black;
+      transition: $transition;
+
+      &:hover {
+        color: $color_white;
+        background: rgba(236, 240, 207, 0.3);
+      }
     }
 
     &-question {
       border: 1px solid white;
       position: relative;
+      transition: $transition;
+
+      &:hover {
+        background: rgba(255, 255, 255, .2);
+        border: 1px solid transparent;
+      }
 
       &-img {
         padding-left: 10px;

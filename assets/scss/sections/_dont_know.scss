@@ -87,6 +87,12 @@
     background: #ECF0CF;
     color: $color-text-black;
     border-radius: 24px;
+    transition: $transition;
+
+    &:hover {
+      color: $color_white;
+      background: rgba(236, 240, 207, 0.5);
+    }
 
     @include breakpoint($lg-max) {
       width: 335px;

@@ -79,8 +79,7 @@ a, .a {
     transition: color $transition;
 
     &:hover {
-        color: $color_text-black;
-        text-decoration: underline;
+        text-decoration: none;
     }
 
     &:active {

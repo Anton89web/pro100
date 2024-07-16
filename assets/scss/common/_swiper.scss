@@ -5,6 +5,11 @@
     height: 84px !important;
     border-radius: 25px;
     background: #D9787B;
+    transition:  $transition;
+
+    &:hover {
+      background: #ad5f61;
+    }
 
     @include breakpoint($lg-max) {
       display: none!important;

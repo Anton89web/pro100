@@ -38,6 +38,13 @@
     color: $color-text-black;
     max-width: 450px;
     height: 70px;
+    transition:  $transition;
+    border: 1px solid transparent;
+
+    &:hover {
+      opacity: .9;
+      border: 1px solid $color_text-black;
+    }
 
     @include breakpoint($md-max) {
       max-width: 90%;
@@ -52,6 +59,5 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 1;
-
   }
 }
