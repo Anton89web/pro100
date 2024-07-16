@@ -43,6 +43,7 @@ export default {
                                         },
                                     ],
                                 ],
+                                minimize: false
                             },
                         },
                     },
@@ -50,6 +51,7 @@ export default {
                         loader: "sass-loader",
                         options: {
                             sourceMap: true,
+                            sassOptions: { minimum: false,outputStyle: 'expanded' }
                         },
                     },
                 ]
