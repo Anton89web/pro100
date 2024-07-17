@@ -21,7 +21,7 @@
       content: url("../images/tab_arrow.svg");
       position: absolute;
       right: 30px;
-      top: 30px;
+      top: 25px;
       transition: transform $transition;
     }
 
@@ -51,7 +51,7 @@
     }
 
     &-title {
-      font-size: 26px;
+      font-size: 22px;
       font-style: italic;
       font-weight: 700;
       line-height: 1;
@@ -80,16 +80,4 @@
       }
     }
   }
-
-  .schedule__question {
-    background-color: $color_white;
-    transition: $transition;
-
-    &:hover {
-      color: $color_white;
-      background: $color_mint;
-      border: 1px solid transparent;
-    }
-  }
-
 }

@@ -97,4 +97,4 @@ changeTab();
 activeAccordion();
 scrollTop()
 
-setTimeout(showModal, 60000);
+setTimeout(showModal, 30000);

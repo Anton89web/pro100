@@ -5,13 +5,13 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export default {
     entry: './assets/js/index.js',
-
     output: {
         filename: 'main.js',
         path: path.resolve(path.dirname('./'), 'build'),
         assetModuleFilename: path.join('images', '[name][ext]'),
     },
     devtool: 'source-map',
+
     module: {
         rules: [
             {

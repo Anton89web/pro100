@@ -94,7 +94,7 @@
       background: $color_mint;
 
       .tariff__item-right {
-        background: #1E7A78;
+        background: $color_mint_dark;
       }
     }
 
@@ -172,12 +172,6 @@
         border-radius: 24px;
         background: #ECF0CF;
         color: $color-text-black;
-        transition: $transition;
-
-        &:hover {
-          color: $color_white;
-          background: rgba(236, 240, 207, .25);
-        }
 
         @include breakpoint($xl-max) {
           max-width: 165px;

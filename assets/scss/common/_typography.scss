@@ -143,3 +143,22 @@ img {
     max-width: max-content;
     height: 100%;
 }
+
+.btn {
+    &_mint {
+        transition: background $transition;
+
+      &:hover {
+         background: $color_mint-dark;
+          color: $color-white;
+      }
+    }
+    &_pink {
+        transition: background $transition;
+
+        &:hover {
+            background: $color_pink-dark;
+            color: $color-white;
+        }
+    }
+}

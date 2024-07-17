@@ -1,15 +1,19 @@
 {
   "name": "pro100",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "dev": "webpack serve --open --mode development",
     "build": "webpack --mode production"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "swiper": "^11.1.4"
+  },
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
@@ -26,8 +30,5 @@
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
-  },
-  "dependencies": {
-    "swiper": "^11.1.4"
   }
 }
