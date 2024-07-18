@@ -148,6 +148,13 @@
     height: 65px;
     border-radius: 24px;
     border: 1px solid $color_text-black;
+    background: transparent;
+    transition: background $transition;
+
+    &:hover {
+      background: $color_pink;
+      border: 1px solid $color_pink;
+    }
 
     @include breakpoint($md-max) {
       border-radius: 12px;
