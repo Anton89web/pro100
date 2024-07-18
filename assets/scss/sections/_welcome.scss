@@ -108,11 +108,6 @@
     }
 
     &-img {
-      scale: 1.45;
-
-      @include breakpoint($lg-max) {
-        scale: 1.65;
-      }
     }
 
     &-text {

@@ -236,25 +236,14 @@
   }
 
   &-img {
-    position: absolute;
-    inset: 20px;
-    scale: 1.37;
-
-    @include breakpoint($lg-max) {
-      top: 15px;
-      left: 15px;
-    }
-
-    @include breakpoint($md-max) {
-      top: 20px;
-      left: 27px;
-      scale: 1.6;
-    }
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 
     &_wrapper {
       width: 375px;
       height: 380px;
-      object-fit: cover;
       border-radius: $radius;
       overflow: hidden;
       position: relative;

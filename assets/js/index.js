@@ -1,17 +1,22 @@
 import '../scss/index.scss'
 import './swiper'
 
+// Закрытие мобильного меню
+function closeMobileMenu() {
+    const menu = document.querySelector('.header__link-wrapper')
+        .classList.toggle('show')
+    const iconsWrapper = document.querySelector('.header__mobile')
+        .classList.toggle('hidden')
+}
+
 // Мобильное меню
 function showMobileMenu() {
-    const menu = document.querySelector('.header__link-wrapper');
     const icons = document.querySelectorAll('.header__mobile-icon');
-    const iconsWrapper = document.querySelector('.header__mobile');
 
     icons.forEach(icon => {
         icon.addEventListener('click', e => {
+            closeMobileMenu()
             stopScroll ()
-            menu.classList.toggle('show')
-            iconsWrapper.classList.toggle('hidden')
         })
     })
 }
@@ -79,22 +84,67 @@ function stopScroll () {
 }
 
 // Модальное окно
-function showModal() {
-    const modal = document.querySelector('.modal');
-    const modalClose = document.querySelector('.modal__close');
+function showModal(modalClass, close) {
+    const modal = document.querySelector(modalClass);
+    const modalClose = document.querySelector(close);
 
     stopScroll ()
     modal.classList.add('show');
 
-    modalClose.addEventListener('click', e => {
-        modal.classList.remove('show');
-        stopScroll ()
+    modal.addEventListener('click', e => {
+        if (e.target == modal || e.target == modalClose) {
+            modal.classList.remove('show');
+            stopScroll ()
+        }
     })
 }
 
+// Передача отзыва в модалку
+function showModalImage() {
+    const modalImage = document.querySelector('.modal__image-img');
+    const reviewsImages = document.querySelectorAll('.reviews__img');
+
+    reviewsImages.forEach(image => {
+        image.addEventListener('click', e => {
+            modalImage.src = e.target.src;
+            showModal('.modal__image', '.modal__image-close')
+        })
+    })
+}
+
+// Cкрол с якорных ссылок в header
+function scrollTo() {
+    const links = document.querySelectorAll('.header__link');
+    if (links.length) {
+        links.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault()
+                const id = link.hash
+
+                function scrollToTab() {
+                    document.querySelector(id).scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+                }
+
+                //Закрытие меню на мобильных
+                if(window.innerWidth < 700) {
+                    closeMobileMenu()
+                    setTimeout(scrollToTab, 500)
+                } else {
+                    scrollToTab()
+                }
+            })
+        })
+    }
+}
+
+scrollTo()
 showMobileMenu();
 changeTab();
 activeAccordion();
+showModalImage()
 scrollTop()
 
-setTimeout(showModal, 30000);
+setTimeout(()=>showModal('.modal', '.modal__close'), 30000);
