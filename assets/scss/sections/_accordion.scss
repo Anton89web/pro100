@@ -17,14 +17,6 @@
       padding: 25px 30px 15px 30px;
     }
 
-    &:after {
-      content: url("../images/tab_arrow.svg");
-      position: absolute;
-      right: 30px;
-      top: 25px;
-      transition: transform $transition;
-    }
-
     &.active {
       .accordion__item-descr {
         overflow: visible;
@@ -38,8 +30,8 @@
         }
       }
 
-      &:after {
-        transform: scale(1, -1)
+      .accordion__item-title:after {
+        transform: scale(1, -1);
       }
     }
 
@@ -51,6 +43,7 @@
     }
 
     &-title {
+      @extend %flex_between;
       font-size: 22px;
       font-style: italic;
       font-weight: 700;
@@ -58,6 +51,18 @@
       text-align: left;
       margin-bottom: 10px;
       text-transform: uppercase;
+      position: relative;
+
+      &:after {
+        content: url("../images/tab_arrow.svg");
+        position: relative;
+        right: 0;
+        transition: transform $transition;
+
+        @include breakpoint($md-max) {
+          right: -20px;
+        }
+      }
 
       @include breakpoint($md-max) {
         font-size: 17px;

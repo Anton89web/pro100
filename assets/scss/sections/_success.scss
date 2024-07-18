@@ -92,6 +92,7 @@
       img {
         @include breakpoint($md-max) {
           height: 30px;
+          max-width: 27px;
         }
       }
     }
@@ -147,6 +148,7 @@
 
         @include breakpoint($sm-max) {
           height: 85px;
+          max-width: 86px;
         }
       }
     }

@@ -86,6 +86,7 @@
 
         @include breakpoint($md-max) {
           height: 120px;
+          max-width: 100px;
           bottom: -10px;
         }
       }

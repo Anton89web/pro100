@@ -114,6 +114,7 @@ section {
 
       @include breakpoint($lg-max) {
         height: 50px;
+        max-width: 70px;
         bottom: -10px;
       }
     }
