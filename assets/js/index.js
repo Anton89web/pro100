@@ -161,4 +161,4 @@ activeAccordion();
 showModalImage()
 scrollTop()
 
-setTimeout(() => showModal('.modal', '.modal__close'), 1000);
+setTimeout(() => showModal('.modal', '.modal__close'), 30000);
