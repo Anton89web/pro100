@@ -3,22 +3,29 @@ import './swiper'
 
 // Закрытие мобильного меню
 function closeMobileMenu() {
-    const menu = document.querySelector('.header__link-wrapper')
-        .classList.toggle('show')
-    const iconsWrapper = document.querySelector('.header__mobile')
-        .classList.toggle('hidden')
+    document.querySelector('.header__link-wrapper')
+        .classList.remove('show')
+
+    document.querySelector('.header__mobile')
+        .classList.add('hidden')
+}
+
+// Открытие мобильного меню
+function showMobileMenu() {
+    document.querySelector('.header__link-wrapper')
+        .classList.add('show')
+
+    document.querySelector('.header__mobile')
+        .classList.remove('hidden')
 }
 
 // Мобильное меню
-function showMobileMenu() {
-    const icons = document.querySelectorAll('.header__mobile-icon');
+function mobileMenu() {
+    document.querySelector('.header__mobile-burger')
+        .addEventListener('click', showMobileMenu)
 
-    icons.forEach(icon => {
-        icon.addEventListener('click', e => {
-            closeMobileMenu()
-            stopScroll ()
-        })
-    })
+   document.querySelector('.header__mobile-cross')
+       .addEventListener('click', closeMobileMenu)
 }
 
 //Табы
@@ -45,7 +52,7 @@ function activeAccordion() {
 
     items.forEach((accordion, i) => {
         accordion.addEventListener('click', e => {
-            if(accordion.classList.contains('active')) {
+            if (accordion.classList.contains('active')) {
                 accordion.classList.remove('active')
             } else {
                 document.querySelector('.accordion__item.active')?.classList.remove('active')
@@ -56,7 +63,7 @@ function activeAccordion() {
 }
 
 //Кнопка скрола наверх
-function scrollTop () {
+function scrollTop() {
     const backToTop = document.querySelector(".back-to-top");
 
     // Показать/скрыть кнопку при прокрутке страницы
@@ -72,15 +79,22 @@ function scrollTop () {
     backToTop.addEventListener("click", function (event) {
         event.preventDefault();
 
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({top: 0, behavior: "smooth"});
     });
 }
 
 // Стоп скролла при мобильном меню и модалки
-function stopScroll () {
+function stopScroll() {
     const body = document.querySelector('body');
 
-    body.classList.toggle('stop__scroll');
+    body.classList.add('stop__scroll');
+}
+
+// Стоп скролла при мобильном меню и модалки
+function removeStopScroll() {
+    const body = document.querySelector('body');
+
+    body.classList.remove('stop__scroll');
 }
 
 // Модальное окно
@@ -88,13 +102,13 @@ function showModal(modalClass, close) {
     const modal = document.querySelector(modalClass);
     const modalClose = document.querySelector(close);
 
-    stopScroll ()
+    stopScroll()
     modal.classList.add('show');
 
     modal.addEventListener('click', e => {
         if (e.target == modal || e.target == modalClose) {
             modal.classList.remove('show');
-            stopScroll ()
+            removeStopScroll()
         }
     })
 }
@@ -121,7 +135,7 @@ function scrollTo() {
                 e.preventDefault()
                 const id = link.hash
 
-                function scrollToTab() {
+                function scrollToBlock() {
                     document.querySelector(id).scrollIntoView({
                         behavior: "smooth",
                         block: "center"
@@ -129,11 +143,11 @@ function scrollTo() {
                 }
 
                 //Закрытие меню на мобильных
-                if(window.innerWidth < 700) {
+                if (window.innerWidth < 700) {
                     closeMobileMenu()
-                    setTimeout(scrollToTab, 500)
+                    setTimeout(scrollToBlock, 500)
                 } else {
-                    scrollToTab()
+                    scrollToBlock()
                 }
             })
         })
@@ -141,10 +155,10 @@ function scrollTo() {
 }
 
 scrollTo()
-showMobileMenu();
+mobileMenu()
 changeTab();
 activeAccordion();
 showModalImage()
 scrollTop()
 
-setTimeout(()=>showModal('.modal', '.modal__close'), 30000);
+setTimeout(() => showModal('.modal', '.modal__close'), 1000);
